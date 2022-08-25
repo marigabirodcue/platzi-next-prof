@@ -10,9 +10,9 @@ export default function Nav() {
     if (route.startsWith(routePage)) {
       return (
         <div className="dark">
-          <nav className="dark:bg-gray-800 bg-white shadow">
-            <div className="dark:bg-gray-800 max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold text-gray-900 capitalize dark:text-white">
+          <nav className="dark:bg-gray-800 dark:text-white bg-white shadow">
+            <div className="dark:bg-gray-800 dark:text-white max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+              <h1 className="dark:bg-gray-800 dark:text-white text-3xl font-bold text-gray-900 capitalize">
                 {route}
               </h1>
             </div>

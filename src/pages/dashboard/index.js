@@ -91,6 +91,7 @@ const handleDelete = (id) => {
 
   return (
     <>
+    <div className="dark">
       <Chart className="mb-8 mt-2" chartData={data} />
       <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -187,6 +188,7 @@ const handleDelete = (id) => {
           </div>
         </div>
         {totalItems > 0 && <Pagination setOffset={setOffset} productNumberLimit={PRODUCT_LIMIT} totalItems={totalItems} />}
+      </div>
       </div>
     </>
   );

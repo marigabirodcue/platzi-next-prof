@@ -32,7 +32,7 @@ export default function Pagination({ setOffset, productNumberLimit, totalItems }
         href="#"
         aria-current="page"
         className={`${getShade(i)}
-                    relative inline-flex items-center px-4 py-2 border text-sm font-medium`}
+                    relative inline-flex items-center px-4 py-2 border text-sm font-medium dark:bg-gray-600 dark:text-white`}
       >
         {i}
       </a>
@@ -75,76 +75,78 @@ export default function Pagination({ setOffset, productNumberLimit, totalItems }
   };
 
   return (
-    <div className="bg-white px-4 py-3 flex items-center
-                    justify-between border-t border-gray-200 sm:px-6">
-      <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm text-gray-700">
-            Showing &nbsp;
-            <span className="font-medium">
-              {productNumberLimit * (current - 1) + 1} &nbsp;
-            </span>
-              to{' '} &nbsp;
-            <span className="font-medium">
-              {current * productNumberLimit < totalItems ? current * productNumberLimit : totalItems} &nbsp;
-            </span>
-            of &nbsp;
-            <span className="font-medium">
-            {totalItems} &nbsp;
-            </span>
-            results
-          </p>
-        </div>
-        <div>
-          <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-          <a
-              onClick={startButton}
-              href="#"
-              className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50
-                        relative inline-flex items-center px-2 py-2 rounded-l-md
-                        border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-            >
-              <span className="sr-only">
-                Start
+    <div className="dark">
+      <div className="dark:bg-gray-600 dark:text-white bg-white px-4 py-3 flex items-center
+                      justify-between border-t border-gray-200 sm:px-6">
+        <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+          <div>
+            <p className="dark:bg-gray-600 dark:text-white text-sm text-gray-700">
+              Showing &nbsp;
+              <span className="font-medium">
+                {productNumberLimit * (current - 1) + 1} &nbsp;
               </span>
-              <ChevronDoubleLeftIcon className="h-5 w-5" aria-hidden="true" />
+                to{' '} &nbsp;
+              <span className="font-medium">
+                {current * productNumberLimit < totalItems ? current * productNumberLimit : totalItems} &nbsp;
+              </span>
+              of &nbsp;
+              <span className="font-medium">
+              {totalItems} &nbsp;
+              </span>
+              results
+            </p>
+          </div>
+          <div className="dark:bg-gray-600 dark:text-white">
+            <nav className="dark:bg-gray-600 dark:text-white relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+            <a
+                onClick={startButton}
+                href="#"
+                className="dark:bg-gray-600 dark:text-white bg-white border-gray-300 text-gray-500 hover:bg-gray-50
+                          relative inline-flex items-center px-2 py-2 rounded-l-md
+                          border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              >
+                <span className="sr-only">
+                  Start
+                </span>
+                <ChevronDoubleLeftIcon className="h-5 w-5" aria-hidden="true" />
             </a>
             <a
-              onClick={prevButton}
-              href="#"
-              className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50
-                        relative inline-flex items-center px-2 py-2 rounded-l-md
-                        border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-            >
-              <span className="sr-only">
-                Previous
-              </span>
-              <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+                onClick={prevButton}
+                href="#"
+                className="dark:bg-gray-600 dark:text-white bg-white border-gray-300 text-gray-500 hover:bg-gray-50
+                          relative inline-flex items-center px-2 py-2 rounded-l-md
+                          border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+             >
+                <span className="dark:bg-gray-600 sr-only">
+                  Previous
+                </span>
+                <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
             </a>
-            {itemsArray}
+              {itemsArray}
             <a
-              onClick={nextButton}
-              href="#"
-              className="relative inline-flex items-center px-2 py-2 rounded-r-md
-                        border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-            >
-              <span className="sr-only">
-                Next
-              </span>
-              <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-            </a>
-            <a
-              onClick={endButton}
-              href="#"
-              className="relative inline-flex items-center px-2 py-2 rounded-r-md
-                        border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-            >
-              <span className="sr-only">
-                End
-              </span>
-              <ChevronDoubleRightIcon className="h-5 w-5" aria-hidden="true" />
-            </a>
-          </nav>
+                onClick={nextButton}
+                href="#"
+                className="dark:bg-gray-600 dark:text-white relative inline-flex items-center px-2 py-2 rounded-r-md
+                          border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              >
+                <span className="sr-only">
+                  Next
+                </span>
+                <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+              </a>
+              <a
+                onClick={endButton}
+                href="#"
+                className="dark:bg-gray-600 dark:text-white relative inline-flex items-center px-2 py-2 rounded-r-md
+                          border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              >
+                <span className="sr-only">
+                  End
+                </span>
+                <ChevronDoubleRightIcon className="h-5 w-5" aria-hidden="true" />
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
